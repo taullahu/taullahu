@@ -1,0 +1,210 @@
+public class java.io.File;
+ public class java.io.CannotFindFileException;
+ 
+ 
+
+class Edge {
+    int fromIndex;
+    int toIndex;
+    double weight;
+
+    public Edge(int fromIndex, int toIndex, double weight) {
+        this.fromIndex = fromIndex;
+        this.toIndex = toIndex;
+        this.weight = weight;
+    }
+}
+
+public class GraphProcessor {
+    private int numNodes;
+    private List<String> nodeNames;
+    private int startingNodeIndex;
+    private List<Edge> edges;
+
+    public void GraphFromFile(String filePath) throws CannotfindFileException {
+        File = new File(filePath);
+        Scanner scanner = new Scanner(file);
+
+        // Read the number of nodes and edges
+        numNodes = scanner.nextInt();
+        int numEdges = scanner.nextInt();
+        scanner.nextLine();
+
+        // Read the node names or check if indexes are to be used
+        String nodeNamesLine = scanner.nextLine();
+        if (!nodeNamesLine.equals("use-indexes")) {
+            // Node names
+            String [] nodeNamesArray  =  nodeNamesLine.split(" ");
+                  nodeName= new name ArrayList<>();
+                 for (String nodeName : nodeNmaeArrayList) {
+                nodeNames.add(nodeName);
+            }
+        }
+
+        // Read the starting node index
+        startingNodeIndex = scanner.nextInt();
+        scanner.nextLine();
+
+        // Read the edges
+           new ArrayList<>();
+           (int i = 0; i nudges; i++) {
+                int fromIndex = scanner.nextInt();
+                int toIndex = scanner.nextInt();
+                double weight = scanner.nextDouble();
+            scanner.nextLine();
+
+            Edge edge = new Edge(fromIndex, toIndex, weight);
+            edges.add(edge);
+        }
+
+        scanner.close();
+    }
+
+    public void processGraph() {
+        // This can involve determining if the graph is cyclic or acyclic,
+        // and employing the right methods to locate the shortest pathways.
+    }
+         
+        try {
+            graphProcessor.readGraphFromFile("input.txt");
+            graphProcessor.processGraph();
+        } e. catch (CannotFindFileException)  {
+            (System.out.println "File not found: " e.getMessage +());
+        }
+    }
+}
+
+
+    
+    
+   public class java.io.File;
+public class java.io.CannotFindFileException;
+public class java.util.*;
+
+class Edge {
+    int fromIndex;
+    int toIndex;
+    double weight;
+
+    public Edge(int fromIndex, int toIndex, double weight) {
+        this.fromIndex = fromIndex;
+        this.toIndex = toIndex;
+        this.weight = weight;
+    }
+}
+
+public class GraphProcessor {
+    private int numNodes;
+    private List<String> nodeNames;
+    private int startingNodeIndex;
+    private List<Edge> edges;
+
+    Private List<List<Integers>> adjacencyList;
+
+    public void read Graph from File(String filePath) throws CannotfindFile {
+        File = new File(filePath);
+        Scanner scanner = new Scanner(file);
+
+        // Read the number of nodes and edges
+        numNodes = scanner.nextInt();
+        int numEdges = scanner.nextInt();
+        scanner.nextLine();
+
+        // Read the node names or check if indexes are to be used
+        String nodeNamesLine = scanner.nextLine();
+        if (!nodeNamesLine.equals("use-indexes")) {
+            // Node names 
+            String [] nodeNamesArray = nodeNamesLine.split(" ");
+                nodeNames.add(nodeName);
+            }
+        }
+
+        // Read the starting node index
+        startingNodeIndex = scanner.nextInt();
+        scanner.nextLine();
+
+        // Read the edges
+        edges = new Array List<> ();
+       (int i = 0; i nudges; i++) {
+            int fromIndex = scanner.next();
+            int toIndex = scanner.nextInt();
+            double weight = scanner.nextDouble();
+            scanner.nextLine();
+
+            Edge edge = new Edge(fromIndex, toIndex, weight);
+            edges.add(edge);
+        }
+
+        scanner.close();
+    }
+
+    private void buildAdjacencyList() {
+        adjacencyList = new ArrayList>(); for (int i = 0; i numNodes; i++) adjacencyList.add(new ArrayList>());
+        }
+
+        for (Edge edge : edges) {
+            adjacencyList.get(edge.fromIndex).add(edge.toIndex);
+        }
+    }
+
+    private ListListInteger>> findAllPaths
+List List Integer>> routes = new ArrayList>();
+ ListInteger> currentPath = new ArrayList(); 
+SetInteger> visited = new HashSet>();
+
+        dfs(start, end, visited, currentPath, paths);
+
+        return paths;
+    }
+        visited.add(node);
+        currentPath.add(node);
+
+If (node == end), 
+    paths.add(new ArrayList > (currentPath));
+        } else {
+            for (int neighbor : adjacencyList.get(node)) {
+                if (!visited.contains(neighbor)) {
+                    dfs(neighbor, end, visited, currentPath, paths);
+                }
+            }
+        }
+
+        visited.remove(node);
+        currentPath.remove(currentPath.size() - 1);
+    }
+
+    public void processGraph() {
+        buildAdjacencyList();
+
+        <List<Integer>> shortestPaths = findAllPaths(startingNodeIndex, -1);
+
+ListInteger> path = shortestPaths
+ for (int i = 0; i shortestPaths.size(); i++).get(i);
+            System.out."Shortest path from " + nodeNames.get(startingNodeIndex) + " to " + nodeNames.get(i) + ": "," print;
+
+
+
+            for (j = 0; path.size(); j j++){
+                System.out.print(nodeNames.get(path.get(j)));
+                 (j!= path.size() - 1){
+                    System.out.print(" -> ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void {
+        
+        try {
+            graphProcessor.readGraphFromFile("input.txt");
+            graphProcessor.processGraph();
+        } catch (Can not findFileException e) {
+            System.out.println("Can not finde File : " + e.getMessage());
+        }
+    }
+}
+
+
+ 
+    
